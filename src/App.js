@@ -9,11 +9,11 @@ class App extends React.Component{
   // 아래는 JS코드임을 알아 둘 것
   add = () =>{
     console.log("add");
-    this.setState.count = 1;
+    this.setState(current => ({count: current.count + 1}));
   }
   minus = () =>{
     console.log("minus");
-    this.setState.count = -1;
+    this.setState(current => ({count: current.count - 1}));
   }
   render(){
     return(
@@ -21,8 +21,8 @@ class App extends React.Component{
         <h1>
         The number is {this.state.count}
         </h1>
-        <button onClick = { this. add }>Add</button>
-        <button onClick = { this. minus }>Minus</button>
+        <button onClick = { this.add }>Add</button>
+        <button onClick = { this.minus }>Minus</button>
       </div>
     );
   }
